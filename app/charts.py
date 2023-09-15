@@ -11,29 +11,47 @@ if __name__ == '__main__':
   values = [100, 200, 80]
   generate_bar_chart()
 
-'''
+
 
 import matplotlib.pyplot as plt
 
-
-def generate_bar_chart(country, labels, values):
+def generate_bar_chart(name, labels, values):
   fig, ax = plt.subplots()
   ax.bar(labels, values)
-  plt.savefig(f'./imgs/{country}.png')
+  plt.savefig(f'./imgs/{name}.png')
   plt.close()
-
 
 def generate_pie_chart(labels, values):
   fig, ax = plt.subplots()
   ax.pie(values, labels=labels)
   ax.axis('equal')
-  plt.savefig('pie.png')
+  plt.savefig('chart_pie.png')
   plt.close()
-
-
 
 if __name__ == '__main__':
   labels = ['a', 'b', 'c']
-  values = [75, 120, 175]
-  #generate_bar_chart(labels, values)
+  values = [10, 40, 800]
+  # generate_bar_chart(labels, values)
+  generate_pie_chart(labels, values)
+'''  
+
+import matplotlib.pyplot as plt
+
+def generate_bar_chart(name, labels, values):
+  fig, ax = plt.subplots()
+  ax.bar(labels, values)
+  plt.savefig(f'./imgs/{name}.png')
+  plt.close()
+
+def generate_pie_chart(labels, values):
+  fig, ax = plt.subplots()
+  ax.pie(values, labels=labels)
+  ax.axis('equal')
+  plt.savefig('chart_pie.png')
+  plt.close()
+
+if __name__ == '__main__':
+  labels = ['a', 'b', 'c']
+  values = [10, 40, 800]
+  # generate_bar_chart(labels, values)
   generate_pie_chart(labels, values)
